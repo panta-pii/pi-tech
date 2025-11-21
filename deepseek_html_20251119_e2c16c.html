@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PI-TECH | Digital Solutions for Your Business</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0a7c42',
+                        'primary-dark': '#065a2e',
+                        'primary-light': '#e8f5e9',
+                        accent: '#4caf50',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+             background: linear-gradient(rgba(10, 124, 65, 0.308), rgba(6, 90, 46, 0.9));
+        }
+        .hero-bg {
+            background-image: url('pi-tech.jpg');
+          background-size: cover;
+            background-position: center;
+            color: var(--text-light);
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #0a7c42 0%, #d8e8d948 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        .logo-container {
+            width: 200px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+        }
+        .logo-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <!-- Logo Section - Replace with your actual logo -->
+                <div class="logo-container mr-4">
+                    <div class="logo-placeholder">
+                        <!-- Replace this div with your logo image -->
+                         <img src="PI-tech .png" alt="PI-TECH Logo" class="h-full w-auto"> 
+                    </div>
+                </div>
+                <h1 class="text-2xl font-bold text-primary">PI<span class="text-primary-dark">-TECH</span></h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-primary font-medium transition-colors">Home</a>
+                <a href="#services" class="text-gray-700 hover:text-primary font-medium transition-colors">Services</a>
+                <a href="#solutions" class="text-gray-700 hover:text-primary font-medium transition-colors">Solutions</a>
+                <a href="#about" class="text-gray-700 hover:text-primary font-medium transition-colors">About</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary font-medium transition-colors">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#contact" class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg font-medium transition-colors">Get Started</a>
+                <button class="md:hidden text-gray-700" id="mobile-menu-button">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden absolute top-16 left-0 right-0 bg-white shadow-lg p-4" id="mobile-menu">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="text-gray-700 hover:text-primary font-medium transition-colors py-2">Home</a>
+                <a href="#services" class="text-gray-700 hover:text-primary font-medium transition-colors py-2">Services</a>
+                <a href="#solutions" class="text-gray-700 hover:text-primary font-medium transition-colors py-2">Solutions</a>
+                <a href="#about" class="text-gray-700 hover:text-primary font-medium transition-colors py-2">About</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary font-medium transition-colors py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20 md:py-28">
+        <div class="gradient-bg absolute inset-0"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">WE CARE FOR YOUR <span class="text-primary-light">BUSINESS NEEDS</span></h1>
+                <p class="text-xl mb-10 text-gray-200">Crafting bold digital solutions that help brands move faster, connect deeper, and stand out with purpose.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#services" class="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-lg transition-colors">Our Services</a>
+                    <a href="#contact" class="border-2 border-white text-white hover:bg-white hover:text-primary font-bold py-3 px-8 rounded-lg transition-colors">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Digital Solutions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We craft bold digital solutions through strategy, design, development, and communication helping brands move faster, connect deeper, and stand out with purpose.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl card-hover border border-gray-100">
+                    <div class="w-14 h-14 bg-primary-light rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-laptop-code text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Web Design & Development</h3>
+                    <p class="text-gray-600 mb-6">Custom websites, online stores, school management systems, and more tailored to your business needs.</p>
+                    <button class="text-primary font-medium flex items-center learn-more-btn" data-service="web-design">Learn more <i class="fas fa-arrow-right ml-2"></i></button>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl card-hover border border-gray-100">
+                    <div class="w-14 h-14 bg-primary-light rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Mobile Applications</h3>
+                    <p class="text-gray-600 mb-6">Native and cross-platform mobile applications for iOS and Android to reach your customers anywhere.</p>
+                    <button class="text-primary font-medium flex items-center learn-more-btn" data-service="mobile-apps">Learn more <i class="fas fa-arrow-right ml-2"></i></button>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl card-hover border border-gray-100">
+                    <div class="w-14 h-14 bg-primary-light rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-cube text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Web Applications</h3>
+                    <p class="text-gray-600 mb-6">Powerful web applications with modern interfaces and robust functionality for your business operations.</p>
+                    <button class="text-primary font-medium flex items-center learn-more-btn" data-service="web-apps">Learn more <i class="fas fa-arrow-right ml-2"></i></button>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-gray-50 p-8 rounded-xl card-hover border border-gray-100">
+                    <div class="w-14 h-14 bg-primary-light rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-palette text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Branding & Design</h3>
+                    <p class="text-gray-600 mb-6">Logo design, brand identity, and marketing materials that capture your values and vision.</p>
+                    <button class="text-primary font-medium flex items-center learn-more-btn" data-service="branding">Learn more <i class="fas fa-arrow-right ml-2"></i></button>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-gray-50 p-8 rounded-xl card-hover border border-gray-100">
+                    <div class="w-14 h-14 bg-primary-light rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-shopping-cart text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">E-commerce Solutions</h3>
+                    <p class="text-gray-600 mb-6">Complete online store setup with payment integration, inventory management, and marketing tools.</p>
+                    <button class="text-primary font-medium flex items-center learn-more-btn" data-service="ecommerce">Learn more <i class="fas fa-arrow-right ml-2"></i></button>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-gray-50 p-8 rounded-xl card-hover border border-gray-100">
+                    <div class="w-14 h-14 bg-primary-light rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Custom Software</h3>
+                    <p class="text-gray-600 mb-6">Tailored software solutions for specific business needs, from CRM systems to specialized applications.</p>
+                    <button class="text-primary font-medium flex items-center learn-more-btn" data-service="custom-software">Learn more <i class="fas fa-arrow-right ml-2"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Revolutionizing Digital Solutions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We create innovative platforms that transform how businesses operate in the digital space.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="mb-10">
+                        <div class="flex items-start mb-6">
+                            <div class="bg-primary text-white p-3 rounded-lg mr-4">
+                                <i class="fas fa-rocket text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Transform Your Business Today</h3>
+                                <p class="text-gray-600">Create a new platform for a smarter digital presence that drives growth and engagement.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-6">
+                            <div class="bg-primary text-white p-3 rounded-lg mr-4">
+                                <i class="fas fa-chart-line text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Scalable Data Insights</h3>
+                                <p class="text-gray-600">Recognize your online experience and personal activity in advance with our analytics solutions.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary text-white p-3 rounded-lg mr-4">
+                                <i class="fas fa-cogs text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">AI-Driven Analytics</h3>
+                                <p class="text-gray-600">Recognize innovation through focus, bringing users embracing and forward existing solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-lg transition-colors inline-flex items-center">
+                        Get Started <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="bg-gradient-to-r from-primary to-primary-dark p-1 rounded-xl mb-8">
+                        <div class="bg-white p-6 rounded-lg">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Who We Serve</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-primary mr-2"></i>
+                                    <span class="text-gray-700">Sole Traders</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-primary mr-2"></i>
+                                    <span class="text-gray-700">Startups</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-primary mr-2"></i>
+                                    <span class="text-gray-700">Artists</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-primary mr-2"></i>
+                                    <span class="text-gray-700">Churches</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-primary mr-2"></i>
+                                    <span class="text-gray-700">Content Creators</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-primary mr-2"></i>
+                                    <span class="text-gray-700">NGOs</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-primary mr-2"></i>
+                                    <span class="text-gray-700">Small Businesses</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-primary mr-2"></i>
+                                    <span class="text-gray-700">Enterprises</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-center">STEP INTO A NEW ERA. STEP INTO THE DIGITAL WORLD. BE POWERED BY PI-TECH.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">About PI-TECH</h2>
+                    <p class="text-gray-600 mb-6">PI-TECH is a dynamic digital solutions provider dedicated to helping businesses of all sizes thrive in the digital era. We combine strategic thinking with technical excellence to deliver solutions that not only look great but also drive real business results.</p>
+                    <p class="text-gray-600 mb-8">We believe in building partnerships with our clients, working closely with you to understand your unique challenges and goals. Our team is passionate about creating digital experiences that help your brand stand out and connect with your audience.</p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-primary-light p-4 rounded-lg">
+                            <h4 class="font-bold text-primary mb-2">Well Organized</h4>
+                            <p class="text-gray-700 text-sm">Structured approach to every project</p>
+                        </div>
+                        <div class="bg-primary-light p-4 rounded-lg">
+                            <h4 class="font-bold text-primary mb-2">Easy Customize</h4>
+                            <p class="text-gray-700 text-sm">Flexible solutions tailored to your needs</p>
+                        </div>
+                        <div class="bg-primary-light p-4 rounded-lg">
+                            <h4 class="font-bold text-primary mb-2">Clean & Modern</h4>
+                            <p class="text-gray-700 text-sm">Contemporary designs that impress</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-primary to-primary-dark p-8 rounded-2xl text-white">
+                    <h3 class="text-2xl font-bold mb-6">Why Choose PI-TECH?</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-primary-light mt-1 mr-3"></i>
+                            <p>Strategic approach to digital transformation</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-primary-light mt-1 mr-3"></i>
+                            <p>Expert team with diverse technical skills</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-primary-light mt-1 mr-3"></i>
+                            <p>Focus on delivering measurable results</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-primary-light mt-1 mr-3"></i>
+                            <p>Ongoing support and maintenance</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-primary-light mt-1 mr-3"></i>
+                            <p>Competitive pricing for all business sizes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Digitalize Your Hustle?</h2>
+                    <p class="text-xl text-gray-200">Contact us today to discuss your project and get a free consultation.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <a href="tel:+26657296538" class="bg-white bg-opacity-10 p-6 rounded-xl text-center hover:bg-opacity-20 transition-all">
+                        <i class="fas fa-phone-alt text-2xl mb-4 text-primary-light"></i>
+                        <h3 class="text-xl font-bold mb-2">Call Us</h3>
+                        <p class="text-primary-light">+266 57296538</p>
+                    </a>
+                    <a href="https://wa.me/26657296538" target="_blank" class="bg-white bg-opacity-10 p-6 rounded-xl text-center hover:bg-opacity-20 transition-all">
+                        <i class="fab fa-whatsapp text-2xl mb-4 text-primary-light"></i>
+                        <h3 class="text-xl font-bold mb-2">WhatsApp</h3>
+                        <p class="text-primary-light">+266 57296538</p>
+                    </a>
+                    <a href="mailto:pitechinfo2@gmail.com" class="bg-white bg-opacity-10 p-6 rounded-xl text-center hover:bg-opacity-20 transition-all">
+                        <i class="fas fa-envelope text-2xl mb-4 text-primary-light"></i>
+                        <h3 class="text-xl font-bold mb-2">Email</h3>
+                        <p class="text-primary-light">pitechinfo2@gmail.com</p>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Send Us a Message</h3>
+                    <form class="space-y-6" id="contact-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="name">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="email">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="subject">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="message">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 px-4 rounded-lg transition-colors">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">PI<span class="text-primary">-TECH</span></h3>
+                    <p class="text-gray-400 mb-4">Crafting bold digital solutions that help brands grow and stand out.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#solutions" class="text-gray-400 hover:text-white transition-colors">Solutions</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Web Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Mobile Apps</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Web Applications</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">E-commerce</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Branding</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3 text-primary"></i>
+                            <a href="tel:+26657296538" class="hover:text-white">+266 57296538</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fab fa-whatsapp mt-1 mr-3 text-primary"></i>
+                            <a href="https://wa.me/26657296538" target="_blank" class="hover:text-white">+266 57296538</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-primary"></i>
+                            <a href="mailto:pitechinfo2@gmail.com" class="hover:text-white">pitechinfo2@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 PI-TECH. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Service Detail Modals -->
+    <div id="service-modal" class="modal">
+        <div class="modal-content">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 id="modal-title" class="text-2xl font-bold text-gray-800"></h3>
+                    <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <div id="modal-content" class="text-gray-600">
+                    <!-- Modal content will be inserted here -->
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <button id="modal-close-btn" class="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-6 rounded-lg transition-colors">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Service details data
+        const serviceDetails = {
+            'web-design': {
+                title: 'Web Design & Development',
+                content: `
+                    <p class="mb-4">We create stunning, responsive websites that not only look great but also drive results. Our web design and development services include:</p>
+                    <ul class="list-disc pl-5 mb-4 space-y-2">
+                        <li>Custom website design tailored to your brand</li>
+                        <li>Responsive design that works on all devices</li>
+                        <li>E-commerce solutions with payment integration</li>
+                        <li>Content Management Systems (CMS)</li>
+                        <li>School management systems</li>
+                        <li>Online booking and reservation systems</li>
+                        <li>Website maintenance and updates</li>
+                    </ul>
+                    <p>We use the latest technologies to ensure your website is fast, secure, and optimized for search engines.</p>
+                `
+            },
+            'mobile-apps': {
+                title: 'Mobile Applications',
+                content: `
+                    <p class="mb-4">Extend your reach with custom mobile applications for iOS and Android. Our mobile app development services include:</p>
+                    <ul class="list-disc pl-5 mb-4 space-y-2">
+                        <li>Native iOS and Android app development</li>
+                        <li>Cross-platform app development</li>
+                        <li>UI/UX design optimized for mobile</li>
+                        <li>App store submission and optimization</li>
+                        <li>Integration with existing systems</li>
+                        <li>Push notification implementation</li>
+                        <li>App maintenance and updates</li>
+                    </ul>
+                    <p>We create intuitive, user-friendly apps that provide value to your customers and help grow your business.</p>
+                `
+            },
+            'web-apps': {
+                title: 'Web Applications',
+                content: `
+                    <p class="mb-4">Powerful web applications that streamline your business operations and improve efficiency. Our web application services include:</p>
+                    <ul class="list-disc pl-5 mb-4 space-y-2">
+                        <li>Custom web application development</li>
+                        <li>Progressive Web Apps (PWAs)</li>
+                        <li>Database design and integration</li>
+                        <li>API development and integration</li>
+                        <li>Real-time applications</li>
+                        <li>Cloud-based solutions</li>
+                        <li>Security and performance optimization</li>
+                    </ul>
+                    <p>We build scalable, secure web applications that grow with your business and adapt to your changing needs.</p>
+                `
+            },
+            'branding': {
+                title: 'Branding & Design',
+                content: `
+                    <p class="mb-4">Create a strong, consistent brand identity that captures your values and resonates with your audience. Our branding services include:</p>
+                    <ul class="list-disc pl-5 mb-4 space-y-2">
+                        <li>Logo design and brand identity</li>
+                        <li>Brand guidelines and style guides</li>
+                        <li>Business card and stationery design</li>
+                        <li>Marketing collateral design</li>
+                        <li>Social media graphics and templates</li>
+                        <li>Presentation design</li>
+                        <li>Packaging design</li>
+                    </ul>
+                    <p>We help you establish a memorable brand that stands out in the market and builds trust with your customers.</p>
+                `
+            },
+            'ecommerce': {
+                title: 'E-commerce Solutions',
+                content: `
+                    <p class="mb-4">Complete e-commerce solutions to help you sell online and grow your business. Our e-commerce services include:</p>
+                    <ul class="list-disc pl-5 mb-4 space-y-2">
+                        <li>Online store setup and customization</li>
+                        <li>Payment gateway integration</li>
+                        <li>Inventory management systems</li>
+                        <li>Shipping and tax calculation</li>
+                        <li>Customer account management</li>
+                        <li>Product catalog management</li>
+                        <li>E-commerce SEO and marketing</li>
+                    </ul>
+                    <p>We create seamless shopping experiences that convert visitors into customers and drive sales for your business.</p>
+                `
+            },
+            'custom-software': {
+                title: 'Custom Software',
+                content: `
+                    <p class="mb-4">Tailored software solutions designed specifically for your business needs and workflows. Our custom software services include:</p>
+                    <ul class="list-disc pl-5 mb-4 space-y-2">
+                        <li>Custom CRM and ERP systems</li>
+                        <li>Business process automation</li>
+                        <li>Data analytics and reporting tools</li>
+                        <li>Inventory and supply chain management</li>
+                        <li>Custom database solutions</li>
+                        <li>Integration with third-party systems</li>
+                        <li>Legacy system modernization</li>
+                    </ul>
+                    <p>We develop software that solves your specific business challenges and helps you work more efficiently and effectively.</p>
+                `
+            }
+        };
+
+        // Mobile menu functionality
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Service modal functionality
+        const modal = document.getElementById('service-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalContent = document.getElementById('modal-content');
+        const closeModalBtn = document.getElementById('close-modal');
+        const modalCloseBtn = document.getElementById('modal-close-btn');
+
+        document.querySelectorAll('.learn-more-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const service = this.getAttribute('data-service');
+                if (serviceDetails[service]) {
+                    modalTitle.textContent = serviceDetails[service].title;
+                    modalContent.innerHTML = serviceDetails[service].content;
+                    modal.style.display = 'flex';
+                }
+            });
+        });
+
+        // Close modal when clicking close button or outside modal
+        closeModalBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        modalCloseBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the form data to a server
+            // For now, we'll just show an alert and reset the form
+            alert(`Thank you, ${name}! Your message has been sent. We'll get back to you soon.`);
+            this.reset();
+        });
+
+        // Instructions for adding your logo
+        console.log("To add your logo:");
+        console.log("1. Replace the logo-placeholder div in the header with your logo image");
+        console.log("2. Example: <img src='your-logo.png' alt='PI-TECH Logo' class='h-full w-auto'>");
+    </script>
+</body>
+</html>
