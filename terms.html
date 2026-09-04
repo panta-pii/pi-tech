@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms &amp; Conditions | PI-TECH</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0C4DBB',
+                        'primary-dark': '#082F73',
+                        'primary-light': '#EEF2FE',
+                    },
+                    fontFamily: { 'inter': ['Space Grotesk', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-gray-50">
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary">PI<span class="text-primary-dark">-TECH</span></a>
+            <a href="index.html" class="text-gray-700 hover:text-primary font-medium">&larr; Back to home</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16 max-w-3xl">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Terms &amp; Conditions</h1>
+        <p class="text-gray-500 mb-10">Last updated: <span id="last-updated"></span></p>
+
+        <div class="space-y-8 text-gray-700 leading-relaxed">
+            <section>
+                <h2 class="text-xl font-bold text-gray-800 mb-2">1. About these terms</h2>
+                <p>These terms govern your use of this website and, once a project begins, your engagement with PI-TECH Digital Solutions ("PI-TECH", "we", "us") for web development, branding, and related digital services. By using this site or engaging our services, you agree to these terms.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-gray-800 mb-2">2. Enquiries and quotes</h2>
+                <p>Submitting the contact form or otherwise reaching out to us does not create a binding contract. A project begins only once we've agreed on scope, pricing, and timeline in writing (email is sufficient) with both parties.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-gray-800 mb-2">3. Project delivery</h2>
+                <ul class="list-disc pl-6 space-y-1">
+                    <li>Project scope, deliverables, pricing, and timelines are agreed on a per-project basis and confirmed in writing before work begins.</li>
+                    <li>Timelines depend on the client providing requested content, feedback, and approvals in a timely manner.</li>
+                    <li>Significant changes to an agreed scope may affect price and timeline; we'll always discuss this with you first.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-gray-800 mb-2">4. Payment</h2>
+                <p>Payment terms (including any deposit, milestone payments, or full payment on delivery) are set out per project. Work product, including source files and hosting access, is transferred to the client upon full payment unless otherwise agreed.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-gray-800 mb-2">5. Intellectual property</h2>
+                <p>Once a project is paid in full, ownership of the final delivered website, application, or design assets transfers to the client. PI-TECH retains the right to showcase completed work in our own portfolio unless the client requests otherwise in writing.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-gray-800 mb-2">6. Third-party services</h2>
+                <p>Projects may rely on third-party platforms (such as hosting providers, domain registrars, or payment gateways). PI-TECH is not responsible for outages, pricing changes, or policy changes made by those third parties.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-gray-800 mb-2">7. Limitation of liability</h2>
+                <p>We take reasonable care in the design, development, and testing of every project. However, PI-TECH is not liable for indirect or consequential losses arising from the use of a delivered website or application, except where such liability cannot be excluded by law.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-gray-800 mb-2">8. Changes to these terms</h2>
+                <p>We may update these terms from time to time. The "last updated" date at the top of this page reflects the most recent revision. Continued use of our services after an update means you accept the revised terms.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-gray-800 mb-2">9. Contact</h2>
+                <p>Questions about these terms can be sent to <a href="mailto:pitechinfo2@gmail.com" class="text-primary hover:underline">pitechinfo2@gmail.com</a> or <a href="tel:+26657296538" class="text-primary hover:underline">+266 57296538</a>.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="container mx-auto px-4 text-center text-gray-400">
+            <p>&copy; <span id="current-year"></span> PI-TECH. All Rights Reserved. &nbsp;|&nbsp; <a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html" class="hover:text-white">Terms &amp; Conditions</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.getElementById('last-updated').textContent = new Date().toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+    </script>
+</body>
+</html>

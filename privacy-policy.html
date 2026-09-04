@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | PI-TECH</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0C4DBB',
+                        'primary-dark': '#082F73',
+                        'primary-light': '#EEF2FE',
+                    },
+                    fontFamily: { 'inter': ['Space Grotesk', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-gray-50">
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary">PI<span class="text-primary-dark">-TECH</span></a>
+            <a href="index.html" class="text-gray-700 hover:text-primary font-medium">&larr; Back to home</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16 max-w-3xl">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Privacy Policy</h1>
+        <p class="text-gray-500 mb-10">Last updated: <span id="last-updated"></span></p>
+
+        <div class="space-y-8 text-gray-700 leading-relaxed">
+            <section>
+                <h2 class="text-xl font-bold text-gray-800 mb-2">1. Who we are</h2>
+                <p>PI-TECH Digital Solutions ("PI-TECH", "we", "us") is a web development and digital branding business operating in Lesotho and South Africa. This policy explains what information we collect through this website and how we use it. You can reach us at <a href="mailto:pitechinfo2@gmail.com" class="text-primary hover:underline">pitechinfo2@gmail.com</a> or <a href="tel:+26657296538" class="text-primary hover:underline">+266 57296538</a>.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-gray-800 mb-2">2. Information we collect</h2>
+                <p class="mb-2">We collect information in two ways:</p>
+                <ul class="list-disc pl-6 space-y-1">
+                    <li><strong>Information you give us directly.</strong> When you submit our contact form, we collect your name, email address, subject, and message content.</li>
+                    <li><strong>Automatic technical information.</strong> Standard web server logs (such as IP address, browser type, and pages visited) may be collected by our hosting provider for security and performance purposes.</li>
+                </ul>
+                <p class="mt-2">We do not use cookies for advertising or tracking, and we do not sell or rent your personal information to third parties.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-gray-800 mb-2">3. How we use your information</h2>
+                <ul class="list-disc pl-6 space-y-1">
+                    <li>To respond to enquiries submitted through the contact form</li>
+                    <li>To communicate with you about a project or quote</li>
+                    <li>To maintain records of client communications</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-gray-800 mb-2">4. How contact form submissions are handled</h2>
+                <p>Messages submitted through our contact form are delivered to our email inbox via a third-party form-delivery service (FormSubmit). We do not store submissions in a separate database beyond what arrives in our email.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-gray-800 mb-2">5. Data retention</h2>
+                <p>We retain contact form submissions and related email correspondence for as long as reasonably necessary to manage our relationship with you, or until you ask us to delete it.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-gray-800 mb-2">6. Your rights</h2>
+                <p>You may ask us at any time to tell you what information we hold about you, to correct it, or to delete it. Contact <a href="mailto:pitechinfo2@gmail.com" class="text-primary hover:underline">pitechinfo2@gmail.com</a> to make a request.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-gray-800 mb-2">7. Changes to this policy</h2>
+                <p>We may update this policy from time to time. The "last updated" date at the top of this page will reflect the most recent revision.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="container mx-auto px-4 text-center text-gray-400">
+            <p>&copy; <span id="current-year"></span> PI-TECH. All Rights Reserved. &nbsp;|&nbsp; <a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html" class="hover:text-white">Terms &amp; Conditions</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.getElementById('last-updated').textContent = new Date().toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+    </script>
+</body>
+</html>
