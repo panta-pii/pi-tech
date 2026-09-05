@@ -122,11 +122,11 @@
             outline: 2px solid #7C97E8;
             outline-offset: 2px;
         }
-        .hero-graphic path, .hero-graphic circle {
+        .hero-graphic {
             opacity: 0;
-            animation: fadeIn 0.6s ease forwards;
+            animation: riseIn 0.8s ease forwards;
+            animation-delay: 0.3s;
         }
-        .hero-graphic circle { animation-delay: 0.4s; }
         .hero-copy > * {
             opacity: 0;
             animation: riseIn 0.7s ease forwards;
@@ -135,16 +135,12 @@
         .hero-copy > *:nth-child(2) { animation-delay: 0.15s; }
         .hero-copy > *:nth-child(3) { animation-delay: 0.25s; }
         .hero-copy > *:nth-child(4) { animation-delay: 0.35s; }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
         @keyframes riseIn {
             from { opacity: 0; transform: translateY(14px); }
             to { opacity: 1; transform: translateY(0); }
         }
         @media (prefers-reduced-motion: reduce) {
-            .hero-graphic path, .hero-graphic circle, .hero-copy > * {
+            .hero-graphic, .hero-copy > * {
                 animation: none;
                 opacity: 1;
             }
@@ -161,7 +157,7 @@
                 <div class="logo-container mr-3">
                     <div class="logo-placeholder">
                         <!-- Replace this div with your logo image -->
-                         <img src="pi-tech-logo.png" alt="pi-tech" class="h-full w-auto"> 
+                         <img src="assets/pi-tech-logo.png" alt="PI-TECH" class="h-full w-auto"> 
                     </div>
                 </div>
                 <span class="text-2xl font-bold text-primary">PI<span class="text-primary-dark">-TECH</span></span>
@@ -215,19 +211,50 @@
 
                 <div class="hidden lg:block" aria-hidden="true">
                     <svg class="hero-graphic w-full h-auto" viewBox="0 0 480 400" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M40 320 L160 220 L260 260 L440 100" fill="none" stroke="#7C97E8" stroke-width="2" stroke-linecap="round" style="animation-delay:0.1s"/>
-                        <path d="M40 320 L160 220" fill="none" stroke="#0C4DBB" stroke-width="2" stroke-linecap="round" style="animation-delay:0.2s"/>
-                        <path d="M160 220 L260 260" fill="none" stroke="#0C4DBB" stroke-width="2" stroke-linecap="round" style="animation-delay:0.3s"/>
-                        <path d="M260 260 L440 100" fill="none" stroke="#0C4DBB" stroke-width="2" stroke-linecap="round" style="animation-delay:0.4s"/>
-                        <path d="M160 220 L200 90" fill="none" stroke="#7C97E8" stroke-width="2" stroke-linecap="round" style="animation-delay:0.5s"/>
-                        <path d="M260 260 L360 340" fill="none" stroke="#7C97E8" stroke-width="2" stroke-linecap="round" style="animation-delay:0.6s"/>
-                        <circle cx="40" cy="320" r="7" fill="#7C97E8"/>
-                        <circle cx="160" cy="220" r="9" fill="#ffffff"/>
-                        <circle cx="260" cy="260" r="7" fill="#7C97E8"/>
-                        <circle cx="440" cy="100" r="9" fill="#0C4DBB" stroke="#7C97E8" stroke-width="2"/>
-                        <circle cx="200" cy="90" r="6" fill="#0C4DBB"/>
-                        <circle cx="360" cy="340" r="6" fill="#0C4DBB"/>
+                        <!-- browser frame -->
+                        <rect x="20" y="20" width="440" height="330" rx="14" fill="#0F1F42" stroke="#22335F" stroke-width="1.5"/>
+                        <rect x="20" y="20" width="440" height="40" rx="14" fill="#0A1730"/>
+                        <rect x="20" y="46" width="440" height="14" fill="#0A1730"/>
+                        <circle cx="42" cy="40" r="5" fill="#7C97E8"/>
+                        <circle cx="60" cy="40" r="5" fill="#3A4D82"/>
+                        <circle cx="78" cy="40" r="5" fill="#3A4D82"/>
+                        <rect x="100" y="33" width="240" height="14" rx="7" fill="#182A54"/>
+
+                        <!-- nav row -->
+                        <rect x="40" y="76" width="30" height="10" rx="2" fill="#7C97E8"/>
+                        <rect x="360" y="76" width="80" height="16" rx="4" fill="#0C4DBB"/>
+
+                        <!-- hero block inside mockup -->
+                        <rect x="40" y="106" width="400" height="110" rx="10" fill="#132a55"/>
+                        <rect x="64" y="132" width="220" height="14" rx="4" fill="#ffffff"/>
+                        <rect x="64" y="154" width="160" height="10" rx="3" fill="#7C97E8"/>
+                        <rect x="64" y="180" width="90" height="20" rx="6" fill="#ffffff"/>
+
+                        <!-- three feature cards -->
+                        <rect x="40" y="232" width="118" height="94" rx="8" fill="#182a54"/>
+                        <circle cx="66" cy="256" r="9" fill="#7C97E8"/>
+                        <rect x="56" y="276" width="86" height="8" rx="3" fill="#3A4D82"/>
+                        <rect x="56" y="292" width="60" height="8" rx="3" fill="#3A4D82"/>
+
+                        <rect x="169" y="232" width="118" height="94" rx="8" fill="#182a54"/>
+                        <circle cx="195" cy="256" r="9" fill="#7C97E8"/>
+                        <rect x="185" y="276" width="86" height="8" rx="3" fill="#3A4D82"/>
+                        <rect x="185" y="292" width="60" height="8" rx="3" fill="#3A4D82"/>
+
+                        <rect x="298" y="232" width="122" height="94" rx="8" fill="#182a54"/>
+                        <circle cx="324" cy="256" r="9" fill="#7C97E8"/>
+                        <rect x="314" y="276" width="90" height="8" rx="3" fill="#3A4D82"/>
+                        <rect x="314" y="292" width="64" height="8" rx="3" fill="#3A4D82"/>
                     </svg>
+                </div>
+            </div>
+
+            <div class="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
+                <p class="text-sm text-gray-400 uppercase tracking-wide">Recent client work</p>
+                <!-- TODO: swap these text wordmarks for real client logo images once Panta provides them -->
+                <div class="flex flex-wrap items-center gap-x-10 gap-y-3">
+                    <span class="text-gray-300 font-bold text-lg">GE Logistics</span>
+                    <span class="text-gray-300 font-bold text-lg">Ntlafatso Foundation</span>
                 </div>
             </div>
         </div>
@@ -518,7 +545,23 @@
                         <p class="text-primary-light">pitechinfo2@gmail.com</p>
                     </a>
                 </div>
-                
+
+                <div class="mb-12">
+                    <div class="rounded-xl overflow-hidden border border-white/10 h-72">
+                        <iframe
+                            title="PI-TECH location in Maseru, Lesotho"
+                            width="100%"
+                            height="100%"
+                            style="border:0"
+                            loading="lazy"
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=27.40%2C-29.36%2C27.58%2C-29.26&amp;layer=mapnik&amp;marker=-29.3142%2C27.4833">
+                        </iframe>
+                    </div>
+                    <p class="text-center text-sm text-gray-300 mt-3">
+                        <a href="https://www.openstreetmap.org/?mlat=-29.3142&amp;mlon=27.4833#map=13/-29.3142/27.4833" target="_blank" rel="noopener" class="hover:text-white underline">View larger map</a>
+                    </p>
+                </div>
+
                 <div class="bg-white rounded-2xl p-8 shadow-lg">
                     <h3 class="text-2xl font-bold text-ink mb-6 text-center">Send Us a Message</h3>
                     <form class="space-y-6" id="contact-form" action="https://formsubmit.co/pitechinfo2@gmail.com" method="POST">
