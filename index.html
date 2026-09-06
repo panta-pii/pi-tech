@@ -157,7 +157,7 @@
                 <div class="logo-container mr-3">
                     <div class="logo-placeholder">
                         <!-- Replace this div with your logo image -->
-                         <img src="pi-tech-logo.png" alt="PI-TECH" class="h-full w-auto"> 
+                         <img src="assets/pi-tech-logo.png" alt="PI-TECH" class="h-full w-auto"> 
                     </div>
                 </div>
                 <span class="text-2xl font-bold text-primary">PI<span class="text-primary-dark">-TECH</span></span>
@@ -209,43 +209,20 @@
                     </div>
                 </div>
 
-                <div class="hidden lg:block" aria-hidden="true">
-                    <svg class="hero-graphic w-full h-auto" viewBox="0 0 480 400" xmlns="http://www.w3.org/2000/svg">
-                        <!-- browser frame -->
-                        <rect x="20" y="20" width="440" height="330" rx="14" fill="#0F1F42" stroke="#22335F" stroke-width="1.5"/>
-                        <rect x="20" y="20" width="440" height="40" rx="14" fill="#0A1730"/>
-                        <rect x="20" y="46" width="440" height="14" fill="#0A1730"/>
-                        <circle cx="42" cy="40" r="5" fill="#7C97E8"/>
-                        <circle cx="60" cy="40" r="5" fill="#3A4D82"/>
-                        <circle cx="78" cy="40" r="5" fill="#3A4D82"/>
-                        <rect x="100" y="33" width="240" height="14" rx="7" fill="#182A54"/>
-
-                        <!-- nav row -->
-                        <rect x="40" y="76" width="30" height="10" rx="2" fill="#7C97E8"/>
-                        <rect x="360" y="76" width="80" height="16" rx="4" fill="#0C4DBB"/>
-
-                        <!-- hero block inside mockup -->
-                        <rect x="40" y="106" width="400" height="110" rx="10" fill="#132a55"/>
-                        <rect x="64" y="132" width="220" height="14" rx="4" fill="#ffffff"/>
-                        <rect x="64" y="154" width="160" height="10" rx="3" fill="#7C97E8"/>
-                        <rect x="64" y="180" width="90" height="20" rx="6" fill="#ffffff"/>
-
-                        <!-- three feature cards -->
-                        <rect x="40" y="232" width="118" height="94" rx="8" fill="#182a54"/>
-                        <circle cx="66" cy="256" r="9" fill="#7C97E8"/>
-                        <rect x="56" y="276" width="86" height="8" rx="3" fill="#3A4D82"/>
-                        <rect x="56" y="292" width="60" height="8" rx="3" fill="#3A4D82"/>
-
-                        <rect x="169" y="232" width="118" height="94" rx="8" fill="#182a54"/>
-                        <circle cx="195" cy="256" r="9" fill="#7C97E8"/>
-                        <rect x="185" y="276" width="86" height="8" rx="3" fill="#3A4D82"/>
-                        <rect x="185" y="292" width="60" height="8" rx="3" fill="#3A4D82"/>
-
-                        <rect x="298" y="232" width="122" height="94" rx="8" fill="#182a54"/>
-                        <circle cx="324" cy="256" r="9" fill="#7C97E8"/>
-                        <rect x="314" y="276" width="90" height="8" rx="3" fill="#3A4D82"/>
-                        <rect x="314" y="292" width="64" height="8" rx="3" fill="#3A4D82"/>
-                    </svg>
+                <div class="hero-graphic hidden lg:block relative">
+                    <!-- Drop your photo in at assets/hero-photo.jpg (recommended: landscape, at least 900px wide) -->
+                    <!-- TODO: update the alt text below to actually describe your photo once it's in place -->
+                    <img
+                        src="assets/hero-photo.jpg"
+                        alt="PI-TECH at work"
+                        class="w-full h-[420px] object-cover rounded-2xl shadow-2xl border border-white/10"
+                        loading="eager"
+                        width="900"
+                        height="420"
+                        onerror="this.style.display='none'; document.getElementById('hero-photo-fallback').style.display='flex';">
+                    <div id="hero-photo-fallback" class="hidden w-full h-[420px] rounded-2xl border border-white/10 bg-[#0F1F42] items-center justify-center text-center px-8">
+                        <p class="text-gray-400">Add your photo at <code class="text-accent">assets/hero-photo.jpg</code></p>
+                    </div>
                 </div>
             </div>
 
@@ -276,7 +253,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-ink mb-4">Web Design & Development</h3>
                     <p class="text-slate mb-6">Custom websites, online stores, school management systems, and more tailored to your business needs.</p>
-                    <button class="text-primary font-medium flex items-center learn-more-btn" data-service="web-design">Learn more <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i></button>
+                    <button class="text-primary font-medium flex items-center learn-more-btn" data-service="web-design" aria-label="Learn more about Web Design & Development">Learn more <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i></button>
                 </div>
                 
                 <!-- Service 2 -->
@@ -286,7 +263,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-ink mb-4">Mobile Applications</h3>
                     <p class="text-slate mb-6">Native and cross-platform mobile applications for iOS and Android to reach your customers anywhere.</p>
-                    <button class="text-primary font-medium flex items-center learn-more-btn" data-service="mobile-apps">Learn more <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i></button>
+                    <button class="text-primary font-medium flex items-center learn-more-btn" data-service="mobile-apps" aria-label="Learn more about Mobile Applications">Learn more <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i></button>
                 </div>
                 
                 <!-- Service 3 -->
@@ -296,7 +273,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-ink mb-4">Web Applications</h3>
                     <p class="text-slate mb-6">Powerful web applications with modern interfaces and robust functionality for your business operations.</p>
-                    <button class="text-primary font-medium flex items-center learn-more-btn" data-service="web-apps">Learn more <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i></button>
+                    <button class="text-primary font-medium flex items-center learn-more-btn" data-service="web-apps" aria-label="Learn more about Web Applications">Learn more <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i></button>
                 </div>
                 
                 <!-- Service 4 -->
@@ -306,7 +283,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-ink mb-4">Branding & Design</h3>
                     <p class="text-slate mb-6">Logo design, brand identity, and marketing materials that capture your values and vision.</p>
-                    <button class="text-primary font-medium flex items-center learn-more-btn" data-service="branding">Learn more <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i></button>
+                    <button class="text-primary font-medium flex items-center learn-more-btn" data-service="branding" aria-label="Learn more about Branding & Design">Learn more <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i></button>
                 </div>
                 
                 <!-- Service 5 -->
@@ -316,7 +293,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-ink mb-4">E-commerce Solutions</h3>
                     <p class="text-slate mb-6">Complete online store setup with payment integration, inventory management, and marketing tools.</p>
-                    <button class="text-primary font-medium flex items-center learn-more-btn" data-service="ecommerce">Learn more <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i></button>
+                    <button class="text-primary font-medium flex items-center learn-more-btn" data-service="ecommerce" aria-label="Learn more about E-commerce Solutions">Learn more <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i></button>
                 </div>
                 
                 <!-- Service 6 -->
@@ -326,7 +303,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-ink mb-4">Custom Software</h3>
                     <p class="text-slate mb-6">Tailored software solutions for specific business needs, from CRM systems to specialized applications.</p>
-                    <button class="text-primary font-medium flex items-center learn-more-btn" data-service="custom-software">Learn more <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i></button>
+                    <button class="text-primary font-medium flex items-center learn-more-btn" data-service="custom-software" aria-label="Learn more about Custom Software">Learn more <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i></button>
                 </div>
             </div>
         </div>
@@ -344,28 +321,28 @@
                 <div>
                     <ol class="space-y-8">
                         <li class="flex gap-5">
-                            <span class="text-2xl font-bold text-primary/40 leading-none w-10 shrink-0">01</span>
+                            <span class="text-2xl font-bold text-primary-dark/70 leading-none w-10 shrink-0">01</span>
                             <div>
                                 <h3 class="text-xl font-bold text-ink mb-2">Discover</h3>
                                 <p class="text-slate">We talk through what you need, who it's for, and what success looks like before any design starts.</p>
                             </div>
                         </li>
                         <li class="flex gap-5">
-                            <span class="text-2xl font-bold text-primary/40 leading-none w-10 shrink-0">02</span>
+                            <span class="text-2xl font-bold text-primary-dark/70 leading-none w-10 shrink-0">02</span>
                             <div>
                                 <h3 class="text-xl font-bold text-ink mb-2">Design</h3>
                                 <p class="text-slate">You see layouts and copy before a line of code is written, so there are no surprises later.</p>
                             </div>
                         </li>
                         <li class="flex gap-5">
-                            <span class="text-2xl font-bold text-primary/40 leading-none w-10 shrink-0">03</span>
+                            <span class="text-2xl font-bold text-primary-dark/70 leading-none w-10 shrink-0">03</span>
                             <div>
                                 <h3 class="text-xl font-bold text-ink mb-2">Build</h3>
                                 <p class="text-slate">We develop, test on real devices, and check in with you at each milestone.</p>
                             </div>
                         </li>
                         <li class="flex gap-5">
-                            <span class="text-2xl font-bold text-primary/40 leading-none w-10 shrink-0">04</span>
+                            <span class="text-2xl font-bold text-primary-dark/70 leading-none w-10 shrink-0">04</span>
                             <div>
                                 <h3 class="text-xl font-bold text-ink mb-2">Launch &amp; Support</h3>
                                 <p class="text-slate">Your site goes live, and we stay on for updates, fixes, and changes afterward.</p>
@@ -429,7 +406,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <a href="https://ge-ligistics.vercel.app" target="_blank" rel="noopener" class="group block bg-paper rounded-xl border border-gray-100 overflow-hidden card-hover">
+                <a href="https://ge-ligistics.vercel.app" target="_blank" rel="noopener noreferrer" class="group block bg-paper rounded-xl border border-gray-100 overflow-hidden card-hover">
                     <div class="h-32 bg-ink flex items-center justify-center">
                         <span class="text-white font-bold text-lg">GE Logistics</span>
                     </div>
@@ -440,7 +417,7 @@
                         <span class="text-primary font-medium inline-flex items-center">Visit site <i class="fas fa-arrow-up-right-from-square ml-2 text-xs" aria-hidden="true"></i></span>
                     </div>
                 </a>
-                <a href="https://ntlafatso-foundation.vercel.app" target="_blank" rel="noopener" class="group block bg-paper rounded-xl border border-gray-100 overflow-hidden card-hover">
+                <a href="https://ntlafatso-foundation.vercel.app" target="_blank" rel="noopener noreferrer" class="group block bg-paper rounded-xl border border-gray-100 overflow-hidden card-hover">
                     <div class="h-32 bg-primary flex items-center justify-center">
                         <span class="text-white font-bold text-lg">Ntlafatso Foundation</span>
                     </div>
@@ -451,7 +428,7 @@
                         <span class="text-primary font-medium inline-flex items-center">Visit site <i class="fas fa-arrow-up-right-from-square ml-2 text-xs" aria-hidden="true"></i></span>
                     </div>
                 </a>
-                <a href="https://panta-pii.github.io/pi-tech" target="_blank" rel="noopener" class="group block bg-paper rounded-xl border border-gray-100 overflow-hidden card-hover">
+                <a href="https://panta-pii.github.io/pi-tech" target="_blank" rel="noopener noreferrer" class="group block bg-paper rounded-xl border border-gray-100 overflow-hidden card-hover">
                     <div class="h-32 bg-primary-dark flex items-center justify-center">
                         <span class="text-white font-bold text-lg">PI-TECH Archive</span>
                     </div>
@@ -534,7 +511,7 @@
                         <h3 class="text-xl font-bold mb-2">Call Us</h3>
                         <p class="text-primary-light">+266 57296538</p>
                     </a>
-                    <a href="https://wa.me/26657296538" target="_blank" rel="noopener" class="bg-white bg-opacity-10 p-6 rounded-xl text-center hover:bg-opacity-20 transition-all">
+                    <a href="https://wa.me/26657296538" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-10 p-6 rounded-xl text-center hover:bg-opacity-20 transition-all">
                         <i class="fab fa-whatsapp text-2xl mb-4 text-primary-light" aria-hidden="true"></i>
                         <h3 class="text-xl font-bold mb-2">WhatsApp</h3>
                         <p class="text-primary-light">+266 57296538</p>
@@ -558,7 +535,7 @@
                         </iframe>
                     </div>
                     <p class="text-center text-sm text-gray-300 mt-3">
-                        <a href="https://www.openstreetmap.org/?mlat=-29.3142&amp;mlon=27.4833#map=13/-29.3142/27.4833" target="_blank" rel="noopener" class="hover:text-white underline">View larger map</a>
+                        <a href="https://www.openstreetmap.org/?mlat=-29.3142&amp;mlon=27.4833#map=13/-29.3142/27.4833" target="_blank" rel="noopener noreferrer" class="hover:text-white underline">View larger map</a>
                     </p>
                 </div>
 
@@ -585,6 +562,10 @@
                         <div>
                             <label class="block text-gray-700 mb-2" for="message">Message</label>
                             <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="consent" name="consent" value="Yes" required class="mt-1 h-4 w-4 border-gray-300 rounded focus:ring-2 focus:ring-primary">
+                            <label for="consent" class="text-sm text-gray-600">I agree that PI-TECH can store and use the information above to respond to my enquiry, as described in the <a href="privacy-policy.html" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</label>
                         </div>
                         <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 px-4 rounded-md transition-colors">Send Message</button>
                     </form>
@@ -651,7 +632,7 @@
                         </li>
                         <li class="flex items-start">
                             <i class="fab fa-whatsapp mt-1 mr-3 text-primary" aria-hidden="true"></i>
-                            <a href="https://wa.me/26657296538" target="_blank" rel="noopener" class="hover:text-white">+266 57296538</a>
+                            <a href="https://wa.me/26657296538" target="_blank" rel="noopener noreferrer" class="hover:text-white">+266 57296538</a>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-envelope mt-1 mr-3 text-primary" aria-hidden="true"></i>
@@ -662,19 +643,21 @@
             </div>
             
             <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-                <p>&copy; <span id="current-year">2026</span> PI-TECH. All Rights Reserved. &nbsp;|&nbsp; <a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html" class="hover:text-white">Terms &amp; Conditions</a></p>
+                <!-- TODO: confirm/replace with your full legal trading details (owner's full name, and a registration number if PI-TECH is formally registered) -->
+                <p class="text-sm mb-3">PI-TECH Digital Solutions is a sole proprietorship operated by Panta, based in Maseru, Lesotho.</p>
+                <p>&copy; <span id="current-year">2026</span> PI-TECH. All Rights Reserved. &nbsp;|&nbsp; <a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html" class="hover:text-white">Terms &amp; Conditions</a> &nbsp;|&nbsp; <a href="cookie-policy.html" class="hover:text-white">Cookie Policy</a> &nbsp;|&nbsp; <a href="refund-policy.html" class="hover:text-white">Refund Policy</a></p>
             </div>
         </div>
     </footer>
 
     <!-- Service Detail Modals -->
-    <div id="service-modal" class="modal">
+    <div id="service-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <div class="modal-content">
             <div class="p-6">
                 <div class="flex justify-between items-center mb-4">
                     <h3 id="modal-title" class="text-2xl font-bold text-ink"></h3>
-                    <button id="close-modal" class="text-gray-500 hover:text-gray-700">
-                        <i class="fas fa-times text-xl"></i>
+                    <button id="close-modal" class="text-gray-500 hover:text-gray-700" aria-label="Close dialog">
+                        <i class="fas fa-times text-xl" aria-hidden="true"></i>
                     </button>
                 </div>
                 <div id="modal-content" class="text-gray-600">
@@ -824,30 +807,44 @@
         const modalContent = document.getElementById('modal-content');
         const closeModalBtn = document.getElementById('close-modal');
         const modalCloseBtn = document.getElementById('modal-close-btn');
+        let lastFocusedElement = null;
+
+        function openModal(service, triggerEl) {
+            if (!serviceDetails[service]) return;
+            lastFocusedElement = triggerEl;
+            modalTitle.textContent = serviceDetails[service].title;
+            modalContent.innerHTML = serviceDetails[service].content;
+            modal.style.display = 'flex';
+            closeModalBtn.focus();
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            if (lastFocusedElement) {
+                lastFocusedElement.focus();
+            }
+        }
 
         document.querySelectorAll('.learn-more-btn').forEach(button => {
             button.addEventListener('click', function() {
                 const service = this.getAttribute('data-service');
-                if (serviceDetails[service]) {
-                    modalTitle.textContent = serviceDetails[service].title;
-                    modalContent.innerHTML = serviceDetails[service].content;
-                    modal.style.display = 'flex';
-                }
+                openModal(service, this);
             });
         });
 
-        // Close modal when clicking close button or outside modal
-        closeModalBtn.addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
-
-        modalCloseBtn.addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
+        // Close modal when clicking close button, outside modal, or pressing Escape
+        closeModalBtn.addEventListener('click', closeModal);
+        modalCloseBtn.addEventListener('click', closeModal);
 
         modal.addEventListener('click', function(e) {
             if (e.target === modal) {
-                modal.style.display = 'none';
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'flex') {
+                closeModal();
             }
         });
 
